@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "25_WebDev_DbContext_SQLServer", "25_WebDev_DbContext_SQLServer\25_WebDev_DbContext_SQLServer.csproj", "{FA23FF1F-BE1D-4554-AA29-9078B839B43C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA23FF1F-BE1D-4554-AA29-9078B839B43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA23FF1F-BE1D-4554-AA29-9078B839B43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA23FF1F-BE1D-4554-AA29-9078B839B43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA23FF1F-BE1D-4554-AA29-9078B839B43C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5D5DA6D-B806-4FBB-8F72-7D1DA52FCC88}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "27_WebDev_KeepingSync", "27_WebDev_KeepingSync\27_WebDev_KeepingSync.csproj", "{4C283E9D-01C9-4217-9F87-EB76E1D52AC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C283E9D-01C9-4217-9F87-EB76E1D52AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C283E9D-01C9-4217-9F87-EB76E1D52AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C283E9D-01C9-4217-9F87-EB76E1D52AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C283E9D-01C9-4217-9F87-EB76E1D52AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EC57A2A-CD37-4ED0-AB1F-6A4010CEA55D}
+	EndGlobalSection
+EndGlobal
