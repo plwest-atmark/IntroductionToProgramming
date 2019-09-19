@@ -62,7 +62,9 @@ namespace _07_Methods
         #endregion
     }
 
-    class MyMethodsClass
+    #region MethodsClass
+
+    public class MyMethodsClass
     {
         public void ThisIsAPublicMethod()
         {
@@ -71,12 +73,27 @@ namespace _07_Methods
             Console.WriteLine(@"This is a public method called ""ThisIsAPublicMethod"".  It has no return value.");
         }
 
+        public void ThisIsAPublicMethodThatCallsAPrivateMethod()
+        {
+            //? Using public methods, we can give access to private methods IF WE WANT.  Sometimes
+            //?      we will use private methods this way when we have to decide what to allows another
+            //?      piece of code to do. This can be a good practice, and you will see this when you
+            //?      begin making larger programs.
+            ThisIsAPrivateMethod();
+        }
+
+        public void ThisIsAPublicMethodCalledFromTheExtensionClass()
+        {
+            Console.WriteLine(@"This is a public method called ""ThisIsAPublicMethodCalledFromTheExtensionClass"".  It has no return value.");
+        }
+
         internal void ThisIsAnInternalMethod()
         {
             //? This method has an "internal" access modifier. Anyone that creates a "MyMethodsClass"
             //?     AND is in the same namespace can use this method.
             Console.WriteLine(@"This is a internal method called ""ThisIsAnInternalMethod"".  It has no return value.");
         }
+
 
         private void ThisIsAPrivateMethod()
         {
@@ -89,16 +106,6 @@ namespace _07_Methods
             Console.WriteLine(@"This is a private method called ""ThisIsAPrivateMethod"".  It has no return value.");
         }
 
-        public void ThisIsAPublicMethodThatCallsAPrivateMethod()
-        {
-            //? Using public methods, we can give access to private methods IF WE WANT.  Sometimes
-            //?      we will use private methods this way when we have to decide what to allows another
-            //?      piece of code to do. This can be a good practice, and you will see this when you
-            //?      begin making larger programs.
-            ThisIsAPrivateMethod();
-        }
-
-
         #region Formatting
         static public void NewLine(int count)
         {
@@ -107,9 +114,57 @@ namespace _07_Methods
                 Console.WriteLine();
             }
         }
+
         #endregion
     }
 
+    #endregion
 
+    #region ExtentionMethod
+    public static class ExtensionMethods
+    {
+
+        /// <summary>
+        /// We can even "extend" our own classes with this. This allows us to "add" code that
+        ///     is needed, without changing the main class.  There are better ways of doing
+        ///     this, however, if the Class we want to change was not created by us, this
+        ///     may be the only way to give a class the functionality we want.  The "PlusFive"
+        ///     is an example of this. We did not create the 'int', but we can "give" it more
+        ///     methods that we can use.  
+        ///     
+        /// Thus, if we do something VERY OFTEN with a class that we did not make, we can
+        ///     use this way to extend that.  It should ONLY be used when what we are needing
+        ///     is used extensively.  We can always use other "patterns" to make our own class
+        ///     that will do the same thing and it might be more effective.
+        ///     
+        /// Notice that this is a public static class and the name is ExtensionMethods. We
+        ///     can actually call it anything we want, but most people will call this class
+        ///     extension methods, or {type}ExtensionMethods.
+        ///     
+        ///         For example:: public static class MyMethodsClassExtensionMethods
+        ///         
+        /// However, in many cases, regarless of what is being extended, we call it ExtensionMethods
+        /// </summary>
+        /// <param name="input"></param>
+        public static void ExtendMyClass(this MyMethodsClass input)
+        {
+            Console.WriteLine("This is a message from the extension class");
+            input.ThisIsAPublicMethodCalledFromTheExtensionClass();
+        }
+
+        /// <summary>
+        /// Extension methods are special and allows us to add functionality to other
+        ///     classes
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static int PlusFive(this int input)
+        {
+            return input + 5;
+
+        }
+    }
+
+    #endregion
 
 }
