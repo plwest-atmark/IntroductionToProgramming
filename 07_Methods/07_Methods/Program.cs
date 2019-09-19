@@ -49,6 +49,7 @@ namespace _07_Methods
             NewLine(1);
             methods.ThisIsAPublicMethodThatCallsAPrivateMethod();
             NewLine(1);
+            methods.ExtendMyClass();
         }
 
         #region Formatting
@@ -148,7 +149,7 @@ namespace _07_Methods
         /// <param name="input"></param>
         public static void ExtendMyClass(this MyMethodsClass input)
         {
-            Console.WriteLine("This is a message from the extension class");
+            Console.WriteLine("This is a message from the extension class on our object.");
             input.ThisIsAPublicMethodCalledFromTheExtensionClass();
         }
 
