@@ -21,23 +21,23 @@ namespace _11_DesignPattern_Repository
 
 
             //! Simulate Displaying all members in the organization.
-            consumer.DisplayAllMembers();
+            consumer.GetAllMembers();
 
 
             //! Simulate a member cancelling their membership our organization
-            Member someMember = consumer.GetMember("Paul", "West");
+            Member someMember = consumer.GetMember(1);
             consumer.CancelMembership(someMember);
 
             //! Simulate Displaying all members in the organization.
-            consumer.DisplayAllMembers();
+            consumer.GetAllMembers();
 
 
             //! Simulate a new member joining our organization
-            Member newMember = new Member("John", "Doe");
+            Member newMember = new Member(5, "John", "Doe");
             consumer.NewMemberJoined(newMember);
 
             //! Simulate Displaying all members in the organization.
-            consumer.DisplayAllMembers();
+            consumer.GetAllMembers();
 
             Console.WriteLine("----------------------- ERROR SIMULATION -----------------------");
             Console.WriteLine();
@@ -46,7 +46,7 @@ namespace _11_DesignPattern_Repository
             //!     This is "wrapped" in a try/catch because it will throw an error message.
             try
             {
-                consumer.CancelMembership("Richard", "Maximum");
+                consumer.CancelMembership(10, "Richard", "Maximum");
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace _11_DesignPattern_Repository
             //!     This is "wrapped" in a try/catch because it will throw an error message.
             try
             {
-                consumer.NewMemberJoined("John", "Doe");
+                consumer.NewMemberJoined(new Member(5, "John", "Doe"));
             }
             catch (Exception ex)
             {

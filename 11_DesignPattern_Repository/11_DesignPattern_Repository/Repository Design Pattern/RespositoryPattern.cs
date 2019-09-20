@@ -9,9 +9,10 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
     /// </summary>
     public interface IMemeberRepository
     {
-        bool AddMember(Member member);
-        bool RemoveMember(Member member);
+        void AddMember(Member member);
+        void RemoveMember(Member member);
         IEnumerable<Member> GetMembers();
+        Member GetMember(int id);
     }
 
     /// <summary>
@@ -23,34 +24,14 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
         public MemberRepository()
         {
             _members = new List<Member>();
+            LoadMembersFromTheDatabase();
         }
-
-
-        public bool AddMember(Member member)
+        public void LoadMembersFromTheDatabase()
         {
-            if (!MemberExists(member))
-            {
-                _members.Add(member);
-                return true;
-            }
-            else
-            {
-                throw new MemberAlreadyExistsException(member,
-                    string.Format(@"Member ""{0} {1}"" is already a member of this organization.", member.FirstName, member.LastName));
-            }
-        }
-
-        private bool MemberExists(Member member)
-        {
-
-            foreach (Member currentMembers in _members)
-            {
-                if ((currentMembers.FirstName == member.FirstName) && (currentMembers.LastName == member.LastName))
-                {
-                    return true;
-                }
-            }
-            return false;
+            AddMember(new Member(1, "Paul", "West"));
+            AddMember(new Member(2, "Mike", "Miller"));
+            AddMember(new Member(3, "Sahra", "Smith"));
+            AddMember(new Member(4, "Samsung", "Westinghouse"));
         }
 
         /// <summary>
@@ -70,17 +51,49 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
         {
             return _members;
         }
-
-        public bool RemoveMember(Member member)
+        public Member GetMember(int id)
         {
-            if (_members.Contains(member))
+            foreach (Member member in _members)
             {
-                return _members.Remove(member);
+                if (member.ID == id) { return member; }
+            }
+            throw new MemberNotFoundException(string.Format(@"Member with ID# {0} was not found.", id));
+        }
+
+        public void AddMember(Member member)
+        {
+            if (!MemberExists(member.ID) )
+            {
+                _members.Add(member);
             }
             else
             {
-                throw new MemberNotFoundException(member, 
-                    string.Format(@"Member ""{0} {1}"" was not found.", member.FirstName, member.LastName));
+                throw new MemberAlreadyExistsException(member,
+                    string.Format(@"Member ""{0} {1}"" is already a member of this organization.", member.FirstName, member.LastName));
+            }
+        }
+
+        private bool MemberExists(int id)
+        {
+            foreach (Member member in _members)
+            {
+                if (member.ID == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void RemoveMember(Member member)
+        {
+            if (_members.Contains(member))
+            {
+                _members.Remove(member);
+            }
+            else
+            {
+                throw new MemberNotFoundException(string.Format(@"Member ""{0} {1}"" was not found.", member.FirstName, member.LastName));
             }
         }
     }
@@ -91,15 +104,15 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
     public class Member
     {
 
-        public Member(string firstName, string lastName)
+        public Member(int id, string firstName, string lastName)
         {
-            this.ID = Guid.NewGuid();
+            this.ID = id;
             this.FirstName = firstName;
             this.LastName = lastName;
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public object ID { get; internal set; }
+        public string FirstName { get; internal set; }
+        public string LastName { get; internal set; }
+        public int ID { get; internal set; }
     }
 }
