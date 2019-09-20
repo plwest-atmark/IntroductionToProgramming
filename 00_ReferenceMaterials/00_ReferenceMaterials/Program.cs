@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// HIKARI
+/// </summary>
 namespace _00_ReferenceMaterials
 {
 
