@@ -39,7 +39,8 @@ namespace _11_DesignPattern_Repository
             //! Simulate Displaying all members in the organization.
             consumer.DisplayAllMembers();
 
-
+            Console.WriteLine("----------------------- ERROR SIMULATION -----------------------");
+            Console.WriteLine();
 
             //! Simulate a member cancelling that does not exist with the organization
             //!     This is "wrapped" in a try/catch because it will throw an error message.
@@ -50,10 +51,22 @@ namespace _11_DesignPattern_Repository
             catch (Exception ex)
             {
                 Console.WriteLine("An Error has occured in the program!");
-                Console.WriteLine();
                 Console.WriteLine(String.Format("ERROR MESSAGE  >>>>  {0}", ex.Message));
             }
 
+            Console.WriteLine();
+
+            //! Simulate a member trying to be added more than once.
+            //!     This is "wrapped" in a try/catch because it will throw an error message.
+            try
+            {
+                consumer.NewMemberJoined("John", "Doe");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An Error has occured in the program!");
+                Console.WriteLine(String.Format("ERROR MESSAGE  >>>>  {0}", ex.Message));
+            }
         }
     }
 }

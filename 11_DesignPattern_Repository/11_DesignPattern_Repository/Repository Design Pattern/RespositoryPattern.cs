@@ -28,13 +28,29 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
 
         public bool AddMember(Member member)
         {
-            if (!_members.Contains(member))
+            if (!MemberExists(member))
             {
                 _members.Add(member);
                 return true;
             }
             else
-                return false;
+            {
+                throw new MemberAlreadyExistsException(member,
+                    string.Format(@"Member ""{0} {1}"" is already a member of this organization.", member.FirstName, member.LastName));
+            }
+        }
+
+        private bool MemberExists(Member member)
+        {
+
+            foreach (Member currentMembers in _members)
+            {
+                if ((currentMembers.FirstName == member.FirstName) && (currentMembers.LastName == member.LastName))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>

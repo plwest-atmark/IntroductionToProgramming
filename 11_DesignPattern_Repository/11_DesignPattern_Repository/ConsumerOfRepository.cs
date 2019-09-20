@@ -1,8 +1,9 @@
-﻿using System;
+﻿using _11_DesignPattern_Repository.Repository_Design_Pattern;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace _11_DesignPattern_Repository.Repository_Design_Pattern
+namespace _11_DesignPattern_Repository
 {
     public class ConsumerOfRepository
     {
