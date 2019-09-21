@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FakeExternalNamespace
+namespace _08_ExternalAssembly
 {
-    public class PublicClassInAnotherNamespace
+    public class PublicClassInAnotherAssembly
     {
         public void PublicMethod() { }
         protected void ProtectedMethod() { }

@@ -6,5 +6,9 @@ namespace FakeExternalNamespace
 {
     internal class InternalClassInAnotherNamespace
     {
+        public void PublicMethod() { }
+        protected void ProtectedMethod() { }
+        private protected void PrivateProtectedMethod() { }
+        private void PrivateMethod() { }
     }
 }
