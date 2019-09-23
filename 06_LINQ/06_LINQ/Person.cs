@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _00_ReferenceMaterials
+namespace _06_LINQ
 {
     public class Person
     {
@@ -50,7 +50,6 @@ namespace _00_ReferenceMaterials
 
         #endregion
     }
-
 
     internal class FullName
     {
