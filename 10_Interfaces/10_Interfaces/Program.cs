@@ -31,6 +31,11 @@ namespace _10_Interfaces
             phone = new GalaxyS8();
             DoPhoneStuff(phone);
 
+            //? I have left most of the classes doing the same thing, but change a couple for examples.
+            //?     This is why we use interfaces and we call it "programming to interfaces", because
+            //?     the "consumer" of the class should not have to worry about WHAT it has, or HOW 
+            //?     the object does what it does. Just that it IS something, and can DO something.
+
 
         }
 
