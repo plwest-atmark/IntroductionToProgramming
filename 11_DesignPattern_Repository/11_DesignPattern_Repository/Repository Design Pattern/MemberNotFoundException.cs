@@ -30,13 +30,12 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
         ///     when we create this custom exception.  This can be a good practice when there is
         ///     critical information that is required to be returned with an exception.
         /// </summary>
-        private MemberNotFoundException()
-        {
-        }
-        public MemberNotFoundException(string message) : base(message)
+        private MemberNotFoundException() {} // cannot do anything unless called from inside another constructor
+        public MemberNotFoundException(string message) : base(message) // the message is sent the the "Exception" class
         {
         }
 
+        #region Do not worry about these constructors for now.
         public MemberNotFoundException(string message, Exception innerException) : base(message, innerException)
         {
         }
@@ -44,6 +43,6 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
         protected MemberNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
-
+        #endregion
     }
 }

@@ -17,7 +17,7 @@ namespace _11_DesignPattern_Repository
 
             // With dependency injection, we would not pass a memberRepository to this
             //      constructor. It would be gotten from the IOC container.
-            ConsumerOfRepository consumer = new ConsumerOfRepository(memeberRepository);
+            RespositoryUser consumer = new RespositoryUser(memeberRepository);
 
 
             //! Simulate Displaying all members in the organization.

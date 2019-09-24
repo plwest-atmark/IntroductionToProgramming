@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_WebDev_AppSettingsJSON", "17_WebDev_AppSettingsJSON\17_WebDev_AppSettingsJSON.csproj", "{7A9AAA9C-353F-4E70-9D50-5D9245391C9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_WebDev_AppSettingsJSON", "17_WebDev_AppSettingsJSON\17_WebDev_AppSettingsJSON.csproj", "{524EB5A4-08BF-4545-99E5-AC947A20121E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7A9AAA9C-353F-4E70-9D50-5D9245391C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A9AAA9C-353F-4E70-9D50-5D9245391C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A9AAA9C-353F-4E70-9D50-5D9245391C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A9AAA9C-353F-4E70-9D50-5D9245391C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{524EB5A4-08BF-4545-99E5-AC947A20121E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524EB5A4-08BF-4545-99E5-AC947A20121E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524EB5A4-08BF-4545-99E5-AC947A20121E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524EB5A4-08BF-4545-99E5-AC947A20121E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8001AF54-939F-473E-9E30-31A16EDC1B2E}
+		SolutionGuid = {6C044BE7-D7B9-41BE-B78F-977FF1510928}
 	EndGlobalSection
 EndGlobal
