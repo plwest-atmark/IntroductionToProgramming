@@ -7,9 +7,9 @@ namespace _11_DesignPattern_Repository
 {
     public class RespositoryUser
     {
-        private IMemeberRepository _repository;
+        private IRepository _repository;
 
-        public RespositoryUser(IMemeberRepository repository)
+        public RespositoryUser(IRepository repository)
         {
             this._repository = repository;
         }
