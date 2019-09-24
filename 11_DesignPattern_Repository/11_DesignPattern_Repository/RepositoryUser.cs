@@ -5,11 +5,11 @@ using System.Text;
 
 namespace _11_DesignPattern_Repository
 {
-    public class ConsumerOfRepository
+    public class RespositoryUser
     {
         private IMemeberRepository _repository;
 
-        public ConsumerOfRepository(IMemeberRepository repository)
+        public RespositoryUser(IMemeberRepository repository)
         {
             this._repository = repository;
         }

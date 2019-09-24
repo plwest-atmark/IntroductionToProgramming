@@ -22,6 +22,7 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
             this.member = member;
         }
 
+        #region Do not worry about these constructors for now.
         public MemberAlreadyExistsException(string message, Exception innerException) : base(message, innerException)
         {
         }
@@ -29,5 +30,6 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
         protected MemberAlreadyExistsException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
+        #endregion
     }
 }
