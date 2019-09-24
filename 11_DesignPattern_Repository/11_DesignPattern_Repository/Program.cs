@@ -12,7 +12,7 @@ namespace _11_DesignPattern_Repository
             //?     would not be needed in the real world as dependency injection
             //?     would take care of this... but for this example, we need to
             //?     create one.
-            IRepository memeberRepository = new MemberRepository();
+            IRepository<Member> memeberRepository = new MemberRepository();
 
 
             // With dependency injection, we would not pass a memberRepository to this
