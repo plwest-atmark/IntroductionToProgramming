@@ -18,6 +18,8 @@ namespace _09_Inheritance
             animals.Add(new Cat());
             animals.Add(new Dog());
             animals.Add(new Horse());
+            animals.Add(new Pig());
+            animals.Add(new Donkey());
 
             //? This is a good way to instantiate. It's easy to read.
             //?     If you want to use this method for your list creation, there
