@@ -12,18 +12,18 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
     /// this should not do ANYTHING that doesn't involve direct access and use of the
     /// List that is inside of the repository concrete classes.
     /// </summary>
-    public interface IMemeberRepository
+    public interface IRepository<T>
     {
-        void AddMember(Member member);
-        void RemoveMember(Member member);
-        IEnumerable<Member> GetMembers();
-        Member GetMember(int id);
+        void Add(T member);
+        void Remove(T member);
+        IEnumerable<T> GetAll();
+        T GetById(int id);
     }
 
     /// <summary>
     /// Concrete Implementation of IMemberRepsoitory
     /// </summary>
-    public class MemberRepository : IMemeberRepository
+    public class MemberRepository : IRepository<Member>
     {
         private List<Member> _members;
         public MemberRepository()
@@ -33,11 +33,12 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
         }
         public void LoadMembersFromTheDatabase()
         {
-            AddMember(new Member(1, "Paul", "West"));
-            AddMember(new Member(2, "Mike", "Miller"));
-            AddMember(new Member(3, "Sahra", "Smith"));
-            AddMember(new Member(4, "Samsung", "Westinghouse"));
+            Add(new Member(1, "Paul", "West"));
+            Add(new Member(2, "Mike", "Miller"));
+            Add(new Member(3, "Sahra", "Smith"));
+            Add(new Member(4, "Samsung", "Westinghouse"));
         }
+
 
         /// <summary>
         /// Method to get all members from this "repository"
@@ -52,11 +53,11 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
         ///               we want to create "custom" messages.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Member> GetMembers()
+        public IEnumerable<Member> GetAll()
         {
             return _members;
         }
-        public Member GetMember(int id)
+        public Member GetById(int id)
         {
             foreach (Member member in _members)
             {
@@ -65,7 +66,7 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
             throw new MemberNotFoundException(string.Format(@"Member with ID# {0} was not found.", id));
         }
 
-        public void AddMember(Member member)
+        public void Add(Member member)
         {
             if (!MemberExists(member.ID) )
             {
@@ -78,6 +79,20 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
             }
         }
 
+        public void Remove(Member member)
+        {
+            if (_members.Contains(member))
+            {
+                _members.Remove(member);
+            }
+            else
+            {
+                throw new MemberNotFoundException(string.Format(@"Member ""{0} {1}"" was not found.", member.FirstName, member.LastName));
+            }
+        }
+
+
+        #region Helper
         private bool MemberExists(int id)
         {
             foreach (Member member in _members)
@@ -89,18 +104,7 @@ namespace _11_DesignPattern_Repository.Repository_Design_Pattern
             }
             return false;
         }
-
-        public void RemoveMember(Member member)
-        {
-            if (_members.Contains(member))
-            {
-                _members.Remove(member);
-            }
-            else
-            {
-                throw new MemberNotFoundException(string.Format(@"Member ""{0} {1}"" was not found.", member.FirstName, member.LastName));
-            }
-        }
+        #endregion
     }
 
     /// <summary>
