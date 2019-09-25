@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_WebDev_AppSettingsJSON", "17_WebDev_AppSettingsJSON\17_WebDev_AppSettingsJSON.csproj", "{524EB5A4-08BF-4545-99E5-AC947A20121E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_WebDev_Configuration", "17_WebDev_AppSettingsJSON\17_WebDev_Configuration.csproj", "{524EB5A4-08BF-4545-99E5-AC947A20121E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

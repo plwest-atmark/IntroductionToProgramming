@@ -4,13 +4,15 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
-namespace _17_WebDev_AppSettingsJSON
+namespace _17_WebDev_Configuration
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
@@ -21,5 +23,6 @@ namespace _17_WebDev_AppSettingsJSON
 
             host.Run();
         }
+
     }
 }

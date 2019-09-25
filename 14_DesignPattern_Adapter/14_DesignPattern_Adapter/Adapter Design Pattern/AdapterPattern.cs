@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
+
+/// <summary>
+/// The Adapter pattern works just like the name suggests.  It is an addition or a change how something
+/// funtions. Think about the adapters we have in this world.  A "car phone" adapter changes the cigarette
+/// lighter plug into a charger for your phone.  It does not change the car nor does it change the phone,
+/// but it adds new functionality so they can work together.  This example show how a "compound" target class
+/// that use to use the ChemicalDatabank to get information, but this becomes troublesome when you have
+/// many things you want to see for many compounds.  The 
+/// </summary>
 namespace _14_DesignPattern_Adapter.Adapter_Design_Pattern
 {
     /// <summary>

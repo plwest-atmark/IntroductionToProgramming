@@ -11,6 +11,10 @@ namespace _14_DesignPattern_Adapter
             Compound unknown = new Compound("Unknown");
             unknown.Display();
 
+            // Another Non-adapted chemical compound
+            Compound waterWithoutAdapter = new Compound("Water");
+            waterWithoutAdapter.Display();
+
             // Adapted chemical compounds
             Compound water = new RichCompound("Water");
             water.Display();
