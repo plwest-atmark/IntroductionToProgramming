@@ -17,19 +17,19 @@ namespace _11_DesignPattern_Repository
 
             // With dependency injection, we would not pass a memberRepository to this
             //      constructor. It would be gotten from the IOC container.
-            RespositoryUser consumer = new RespositoryUser(memeberRepository);
+            MemberRespositoryUser consumer = new MemberRespositoryUser(memeberRepository);
 
 
             //! Simulate Displaying all members in the organization.
-            consumer.GetAllMembers();
+            consumer.DisplayAllMembersInformation();
 
 
             //! Simulate a member cancelling their membership our organization
-            Member someMember = consumer.GetMember(1);
+            Member someMember = consumer.DisplayASingleMembersInformation(1);
             consumer.CancelMembership(someMember);
 
             //! Simulate Displaying all members in the organization.
-            consumer.GetAllMembers();
+            consumer.DisplayAllMembersInformation();
 
 
             //! Simulate a new member joining our organization
@@ -37,7 +37,7 @@ namespace _11_DesignPattern_Repository
             consumer.NewMemberJoined(newMember);
 
             //! Simulate Displaying all members in the organization.
-            consumer.GetAllMembers();
+            consumer.DisplayAllMembersInformation();
 
             Console.WriteLine("----------------------- ERROR SIMULATION -----------------------");
             Console.WriteLine();
@@ -46,7 +46,7 @@ namespace _11_DesignPattern_Repository
             //!     This is "wrapped" in a try/catch because it will throw an error message.
             try
             {
-                consumer.CancelMembership(10, "Richard", "Maximum");
+                consumer.CancelMembership(10, "James", "Max");
             }
             catch (Exception ex)
             {
