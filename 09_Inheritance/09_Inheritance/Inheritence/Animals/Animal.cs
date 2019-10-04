@@ -9,10 +9,23 @@ namespace _09_Inheritance.Animals
         #region Fields and Properties
 
         private string _animalName;
-        public string AnimalName { get { return _animalName; }}
+        public string AnimalName
+        {
+            get
+            {
+                if (_animalName != null)
+                {
+                    return _animalName;
+                }
+                else
+                {
+                    return "NO NAME FOUND";
+                }
+            }
+        }
         public string Color { get; set; }
-        public int Height { get; set; }
-        public int Weight { get; set; }
+        public int Height { get; }
+        public int Weight { get; }
         
         #endregion
 

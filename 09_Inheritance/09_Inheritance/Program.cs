@@ -29,11 +29,25 @@ namespace _09_Inheritance
             //    new Horse()
             //};
 
+
+            // Due to inheritance and polymorphism, it does not matter which "child" class we use, we can use them all
+            // as if they are the base class Animal. This means that the classes that inherit a base class can then be used
+            // in the same way regarless of how they actually do the work.  In this case, each of our Animals perform different
+            // actions that are written to the Console. 
+
+            //? A real world example would be a logging system.  We can create different logging systems with a base logging
+            //? class, and then log information differently depending on which one we use.  However, since they inherit the 
+            //? same base class, we can use them the same way. This allows the "consumer" of the class to not worry about HOW
+            //? the logging system works or where it logs. It's not the "consumers" job to worry about this. It's the logging
+            //? systems responsiblity.  This is a means to change HOW something works, but not change the user of the system.
+            //? This is a powerful tool and is used extensively through software development and Object-Oritented Programming.
             foreach (Animal animal in animals)
             {
                 Console.WriteLine();
                 Console.WriteLine($"-------------- {animal.AnimalName} --------------");
 
+                //! It does not matter which "kind" of animal it is, we use the same method for all animals and they
+                //! perform different actions based on what they have been implemented to do.
                 animal.MakeAnimalSound();
                 animal.PerformAnimalAction();
                 animal.Sleep();
