@@ -34,7 +34,9 @@ namespace _16_IntroToWebDevelopment
                 // This, like Kestrel, is a hosting service that can be used for our web application.
                 .UseIISIntegration()
 
-                //TODO THIS NEEDS NOTES
+                // This tells the WebHostBuilder to use the "Startup" class as it's configuration setup.
+                // This can technically use any "class", but the startup class has been built for us and should
+                // be used as needed.
                 .UseStartup<Startup>()
 
                 //TODO THIS NEEDS NOTES

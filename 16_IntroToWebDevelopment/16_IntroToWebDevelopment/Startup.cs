@@ -58,8 +58,14 @@ namespace _16_IntroToWebDevelopment
         /// <param name="loggerFactory"></param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+
+            // simply adds the ability to log information to a console in the application.
             loggerFactory.AddConsole();
 
+
+            // setups using the developer exception page ONLY when in the development environment.
+            // This is helpful because the development exception page allows us to get a lot of information
+            // and should only be used in the development environemnt due to security reasons.
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
