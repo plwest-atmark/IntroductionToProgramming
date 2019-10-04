@@ -1,21 +1,10 @@
 ﻿using _12_DesignPattern_Factory.CompanyFactory.DepartmentFactory.EmployeeProduct;
+using _12_DesignPattern_Factory.Factory_Design_Pattern.More_Complex_Example.CompanyFactory.Payroll_Systems;
 using System;
 
-namespace _12_DesignPattern_Factory.CompanyFactory
+namespace _12_DesignPattern_Factory.Factory_Design_Pattern.More_Complex_Example.CompanyFactory.Payroll_Systems
 {
 
-    /// <summary>
-    /// This is an interface for the PayrollSystem.  Using an interface allows us to create
-    /// multiple "system" that all behave in the same manner.  When we use an IPayrollSystem, the
-    /// "consumer" or the class using the payroll system does not have to worry about what "kind" of
-    /// processes and the details of how it works.  They just use the methods, properties, etc that are
-    /// in the interface.  
-    /// </summary>
-    public interface IPayrollSystem
-    {
-        void AdjustSalary(Employee employee);
-        void PayEmployees(Employee employee);
-    }
 
     /// <summary>
     /// A "concrete" implimentation a payroll system.  In the real world, this would be an entire
@@ -23,8 +12,9 @@ namespace _12_DesignPattern_Factory.CompanyFactory
     /// measures to ensure no one changes data, and a number of other items that will help with
     /// ensuring the system is good and works as expected in all cases.
     /// </summary>
-    public class PayRollSystem : IPayrollSystem
+    public class BasicPayRollSystem : IPayrollSystem
     {
+
         public void AdjustSalary(Employee employee)
         {
             // Here we would get Development database information on employees that have their salary adjusted for whatever reason, along with how much it's adjusted.
@@ -54,9 +44,8 @@ namespace _12_DesignPattern_Factory.CompanyFactory
         /// </summary>
         public void PayEmployees(Employee employee)
         {
-
             // we need to allow for every employee to have an "adjustment" to their pay based on some database information.
-                AdjustSalary(employee);
+            AdjustSalary(employee);
             // get the payroll department from the company (THIS MIGHT BE HUMAN RESOURCES IN SOME COMPANIES, but we have to "fake" out the program and use payroll class)
             // basically, even if a company calls their payroll Human Resources, we need to use the payroll we created to actually pay people.
 

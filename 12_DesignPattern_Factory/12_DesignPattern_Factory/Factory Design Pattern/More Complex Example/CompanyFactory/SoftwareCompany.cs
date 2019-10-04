@@ -1,10 +1,11 @@
 using _12_DesignPattern_Factory.CompanyFactory;
 using _12_DesignPattern_Factory.CompanyFactory.DepartmentFactory.Departments;
+using _12_DesignPattern_Factory.Factory_Design_Pattern.More_Complex_Example.CompanyFactory.Payroll_Systems;
 using System;
 
 class SoftwareCompany : Company
 {
-    public SoftwareCompany(string companyName, PayRollSystem payrollSystem) : base(companyName, payrollSystem) { }
+    public SoftwareCompany(string companyName, IPayrollSystem payrollSystem) : base(companyName, payrollSystem) { }
 
     public override void CreateDepartments()
     {
@@ -17,8 +18,8 @@ class SoftwareCompany : Company
         // A software company will have specific departments that may very from company to company
         // This is where we do this.
         // Most Software Companies have the following Departments:
-        Departments.Add(new Development());
-        Departments.Add(new Integration());
-        Departments.Add(new QualityAssurance());
+        this._departments.Add(new Development());
+        this._departments.Add(new Integration());
+        this._departments.Add(new QualityAssurance());
     }
 }

@@ -1,6 +1,8 @@
 using _12_DesignPattern_Factory.CompanyFactory;
 using _12_DesignPattern_Factory.CompanyFactory.DepartmentFactory.Departments;
 using _12_DesignPattern_Factory.CompanyFactory.DepartmentFactory.EmployeeProduct;
+using _12_DesignPattern_Factory.Factory_Design_Pattern.More_Complex_Example.CompanyFactory.Payroll_Systems;
+using System;
 using System.Collections.Generic;
 
 /// <summary>
@@ -49,24 +51,20 @@ public abstract class Company
     // use dependency injection, we can change the payroll system without changing the company class. (For now, we are sending a
     // concrete payroll system to the constructor. However, later we will allow dependency injection to do this, and we will not
     // have to send a specfic payroll system when we create the company.
-    private IPayrollSystem _payroll;
+    internal IPayrollSystem _payroll;
 
 
     // obviously all companies have a company name.
-    private string _companyName;
+    internal string _companyName;
     public string CompanyName { get { return _companyName; }}
 
     // We would also create all the other propertie of a company here and set them in the constructor. Some we will make properties that are
     // set after we create the company. Things that change(or are allowed to change) are set with properties. Things like the company logo (which
     // can change over time) is usually set with properties and not with the constructor.
 
-    // This is our private departments field. This will be used internally in this class only and should never be passed or
+    // This is our internal departments field. This will be used internally in this class only and should never be passed or
     // given to anything outside of this class. The "private" keyword will ensure this does not happen.
-    private List<Department> _departments;
-    // Note that we do not have a "setter". We do not want anything outside of this class to change the departments.
-    // This is done intentionally to prevent unwanted data changes.  We can create a "AddDepartment()" method if we 
-    // ever want to be able to add departments to this class in the future.
-    public List<Department> Departments { get { return _departments; } } 
+    internal List<Department> _departments;
 
     public Company(string companyName, IPayrollSystem payrollSystem)
     {
@@ -74,6 +72,8 @@ public abstract class Company
         this._payroll = payrollSystem;
         this._departments = new List<Department>();
 
+        // This is the constructor of the asbstract base class calling the factory method
+        // This is ALWAYS neccessary in a factory pattern and what makes it a factory pattern.
         this.CreateDepartments();
     }
 
@@ -96,6 +96,20 @@ public abstract class Company
         _departments.Add(new HumanResources());
     }
 
+    public virtual void DisplayCompanyName()
+    {
+        Console.WriteLine($"Company Name: {this.CompanyName}");
+    }
+
+    public virtual void DisplayCompanyDepartments()
+    {
+        foreach (Department department in _departments)
+        {
+            Console.WriteLine($"    Department: {department.DepartmentName}");
+        }
+        Console.WriteLine();
+    }
+
     /// <summary>
     /// Remember, ALL companies pay their employees.  We created this company with a specific "payroll system" that will handle HOW the employees are paid
     /// but, it's the companies job to tell the payroll system to pay the companies. IN THIS CASE. Sometimes we may want to just "register" the company with
@@ -114,7 +128,9 @@ public abstract class Company
     /// </summary>
     internal void PayEmployees()
     {
-        foreach (Department department in this.Departments)
+        Console.WriteLine("Let's pay our employees");
+        Console.WriteLine();
+        foreach (Department department in this._departments)
         {
             foreach (Employee employee in department.Employees)
             {
