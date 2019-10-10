@@ -1,5 +1,4 @@
 ﻿using _12_DesignPattern_Factory.CompanyFactory;
-using _12_DesignPattern_Factory.CompanyFactory.DepartmentFactory.Departments;
 using _12_DesignPattern_Factory.DocumentFactory.AbstractFactory;
 using _12_DesignPattern_Factory.DocumentFactory.AbstractProduct;
 using _12_DesignPattern_Factory.DocumentFactory.ConcreteFactory;
@@ -40,12 +39,12 @@ namespace _12_DesignPattern_Factory
             Console.WriteLine();
             #endregion
 
-            Company[] companies = new Company[2];
+            CompanyFactory.CompanyFactory[] companies = new CompanyFactory.CompanyFactory[2];
             // we create our software company
-            companies[0] = new SoftwareCompany("My Software Company", new BasicPayRollSystem());
-            companies[1] = new SoftwareCompany("My Awesome Software Company", new AdvancedPayrollSystem());
+            companies[0] = new SoftwareCompanyFactory("My Software Company", new BasicPayRollSystem());
+            companies[1] = new SoftwareCompanyFactory("My Awesome Software Company", new AdvancedPayrollSystem());
 
-            foreach (Company company in companies)
+            foreach (CompanyFactory.CompanyFactory company in companies)
             {
                 company.DisplayCompanyName();
                 // let the company display it's own departments. Each company may choose
