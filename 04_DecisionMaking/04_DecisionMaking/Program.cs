@@ -12,7 +12,7 @@ namespace _04_DecisionMaking
 
             //? The bool keyword is an alias of System.Boolean. It is used to 
             //?     declare variables to store the Boolean values: true and false.
-            bool someCondition = false;
+            bool someCondition = true;
 
             //? This creates a variable. The value type is an integer, so sum becomes an
             //?     strongly typed int variable when we instantiate it.

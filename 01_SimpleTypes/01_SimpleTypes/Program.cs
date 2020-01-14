@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace _01_SimpleTypes
 {
 
@@ -68,88 +69,147 @@ namespace _01_SimpleTypes
     class Program
     {
 
-        #region Example and Explaination
+        //    #region Example and Explaination
 
         static void Main(string[] args)
         {
 
-            if (!_pratice)
-            {
+            Notebook myNoteBook = new Notebook();
 
-                //? To declare any primative type (or simple typle) variable we always
-                //? use the same format. We can also chose to set the value of the new variable,
-                //? or do this at a later place in our program.
-                //? 
-                /*!         {type} {name} = {value}; */
-                //!         {type} {name};
-
+            myNoteBook.CreateMessage("My Message Page 1");
+            myNoteBook.CreateMessage("My Message Page 2");
+            myNoteBook.CreateMessage("My Message Page 3");
+            myNoteBook.CreateMessage("My Message Page 4");
+            myNoteBook.CreateMessage("My Message Page 5");
+            myNoteBook.CreateMessage("My Message Page 6");
 
 
-                // ------------------------ Boolean ------------------------
-                bool boolVariable = true; // This is an example with value being set when we create it.
+            myNoteBook.DeleteMessage(2);
+            myNoteBook.DeleteMessage(2);
 
-            Console.WriteLine(String.Format("boolVariable value: {0}", boolVariable));
+            myNoteBook.UpdateMessage(1, "My New Page 1");
 
-
-            // ------------------------ signed numbers ------------------------
-            // Remember the range and use of each of these variables.
-            //! If you try to put a number that is too big or small into these, your program will crash
-            //
-            //! ALSO: int variables will not have decimal places. 
-            //!           the decimal place will be removed, or your program will crash
-            sbyte sbyteVariable = 5; 
-            short shortVariable;        // This is an example with value being set when we create it.
-            int intVariable = 60;       
-            long longVariable;
-            float floatVariable;
-            double doubleVariable;
-            decimal decimalVariable;
-
-            Console.WriteLine(String.Format("sbyteVariable value: {0}", sbyteVariable));
-            Console.WriteLine(String.Format("intVariable value: {0}", intVariable));
-
-            // ------------------------ unsigned numbers ------------------------
-            // This value of the next four variables can never be negative. 
-            //! Your program will crash if this is attempted.
-            byte byteVariable;
-            ushort ushortVariable = 60;  
-            uint uintVariable;
-            ulong ulongVariable;
+            myNoteBook.ThrowAway();
 
 
-            // ------------------------ char ------------------------
-            //! It is important to mention that we use the ' ' instead of " " with char variables
-            char charVariable = 'b';
-            Console.WriteLine(String.Format("charVariable value: {0}", charVariable));
 
 
-            // ------------------------ string ------------------------
-            string stringVariable = "Hello World!";
-            Console.WriteLine(String.Format("stringVariable value: {0}", stringVariable));
 
 
-            }
-            else
-            {
-                PracticeMethod();
-            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //        if (!_pratice)
+            //        {
+
+            //            //? To declare any primative type (or simple typle) variable we always
+            //            //? use the same format. We can also chose to set the value of the new variable,
+            //            //? or do this at a later place in our program.
+            //            //? 
+            //            /*!         {type} {name} = {value}; */
+            //            //!         {type} {name};
+
+
+
+            //            // ------------------------ Boolean ------------------------
+            //            bool myBoolValue = false; // This is an example with value being set when we create it.
+
+            //        Console.WriteLine(String.Format("boolVariable value: {0}, {1}, {2}", myBoolValue, "blue", "green"));
+
+
+
+            //        // make your own boolean
+
+            //        // print to screen
+
+
+
+            //        // ------------------------ signed numbers ------------------------
+            //        // Remember the range and use of each of these variables.
+            //        //! If you try to put a number that is too big or small into these, your program will crash
+            //        //
+            //        //! ALSO: int variables will not have decimal places. 
+            //        //!           the decimal place will be removed, or your program will crash
+            //        sbyte sbyteVariable = 5; 
+            //        short shortVariable;        // This is an example with value being set when we create it.
+            //        int intVariable = 60;       
+            //        long longVariable;
+            //        float floatVariable;
+            //        double doubleVariable;
+            //        decimal decimalVariable;
+
+            //        Console.WriteLine(String.Format("sbyteVariable value: {0}", sbyteVariable));
+            //        Console.WriteLine(String.Format("intVariable value: {0}", intVariable));
+
+            //        // ------------------------ unsigned numbers ------------------------
+            //        // This value of the next four variables can never be negative. 
+            //        //! Your program will crash if this is attempted.
+            //        byte byteVariable;
+            //        ushort ushortVariable = 60;  
+            //        uint uintVariable;
+            //        ulong ulongVariable;
+
+
+            //        // ------------------------ char ------------------------
+            //        //! It is important to mention that we use the ' ' instead of " " with char variables
+            //        char charVariable = 'b';
+            //        Console.WriteLine(String.Format("charVariable value: {0}", charVariable));
+
+
+            //        // ------------------------ string ------------------------
+            //        string stringVariable = "Hello World!";
+            //        Console.WriteLine(String.Format("stringVariable value: {0}", stringVariable));
+
+
+            //        }
+            //        else
+            //        {
+            //            PracticeMethod();
+            //        }
+
+
+            //    }
+
+
+            //    #endregion
+
+            //    #region Practice Method  - Try to create some of your own variables and print them to the Console.
+            //    // When you want to try and practice, change the value of this to false.
+            //    // Use the method
+            //    private static bool _pratice = false;
+            //    static private void PracticeMethod()
+            //    {
+            //        // This will be where your code goes.
 
 
         }
-
-
-        #endregion
-
-        #region Practice Method  - Try to create some of your own variables and print them to the Console.
-        // When you want to try and practice, change the value of this to false.
-        // Use the method
-        private static bool _pratice = false;
-        static private void PracticeMethod()
-        {
-            // This will be where your code goes.
-
-
-        }
-        #endregion
+        //    #endregion
     }
 }
